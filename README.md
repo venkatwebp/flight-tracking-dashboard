@@ -131,13 +131,7 @@ Users can search flights using their callsign.
 
 Example:
 
-```text
 AIC101
-
-Add this:
-
-```markdown
----
 
 # 🖼️ Screenshots
 
