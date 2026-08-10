@@ -1,27 +1,135 @@
-# FlightTrackingDashboard
+# ✈️ Flight Operations Dashboard
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.16.
+A responsive **Flight Operations & Tracking Dashboard** built with Angular 16 and Leaflet Maps.
 
-## Development server
+The application provides an interactive aviation operations interface for monitoring flights, viewing aircraft positions, exploring flight routes, filtering operational data, and controlling flight movement through a simple Play / Pause / Reset animation.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 📌 Project Overview
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The Flight Operations Dashboard is designed to provide an aviation-style monitoring experience for flight operations teams.
 
-## Build
+The dashboard combines:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Interactive flight tracking
+- Aircraft markers
+- Airport locations
+- Flight route visualization
+- Flight details
+- Operational KPI cards
+- Search and filtering
+- Pagination
+- Flight animation
+- Light and dark themes
+- Responsive desktop and tablet layouts
 
-## Running unit tests
+The application currently uses **mock flight data** to simulate real-world flight operations.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 🎯 Assignment Objectives
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+The primary objectives of this project are:
 
-## Further help
+1. Build a responsive flight tracking dashboard using Angular.
+2. Integrate Leaflet for interactive map visualization.
+3. Display multiple aircraft on an interactive map.
+4. Allow users to select a flight and view its details.
+5. Visualize the selected flight route.
+6. Provide operational KPI information.
+7. Implement search and filtering functionality.
+8. Provide flight movement animation controls.
+9. Support light and dark themes.
+10. Follow a clean and maintainable Angular application structure.
+11. Implement unit tests for key application functionality.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+---
+
+# ✨ Features
+
+## 🗺️ Interactive Flight Map
+
+The dashboard uses **Leaflet Maps** to provide an interactive flight tracking experience.
+
+The map displays:
+
+- Aircraft markers
+- Current aircraft positions
+- Aircraft direction
+- Origin airports
+- Destination airports
+- Selected flight route
+- Map zoom controls
+- Automatic route fitting for selected flights
+
+The application contains **20 mock flights** representing different operational states.
+
+---
+
+## ✈️ Aircraft Markers
+
+Aircraft are displayed using custom aircraft-shaped markers.
+
+Each aircraft marker:
+
+- Shows the current flight position
+- Uses the aircraft's calculated bearing
+- Rotates according to the flight direction
+- Can be clicked to select the flight
+- Updates its position during animation
+
+Clicking an aircraft marker selects the corresponding flight and updates the Flight Details panel.
+
+---
+
+## 🛫 Airport Visualization
+
+When a flight is selected, the dashboard displays:
+
+- Origin airport
+- Destination airport
+
+Different visual indicators are used to distinguish the origin and destination locations.
+
+---
+
+## 🛣️ Flight Route Visualization
+
+When a flight is selected:
+
+- The origin location is identified.
+- The destination location is identified.
+- A route polyline is drawn between them.
+- The map automatically adjusts to display the complete route.
+- The selected aircraft is highlighted through the active flight state.
+
+---
+
+# 📊 Operations Dashboard
+
+The dashboard provides four KPI cards:
+
+| KPI | Description |
+|---|---|
+| Total Flights | Total number of flights currently available |
+| Active Flights | Flights currently marked as Active |
+| Delayed Flights | Flights currently marked as Delayed |
+| Arrived Flights | Flights that have completed their journey |
+
+These KPI values are dynamically calculated from the flight data.
+
+---
+
+# 🔎 Search & Filters
+
+The Flight Operations section provides multiple filtering options.
+
+### Search by Callsign
+
+Users can search flights using their callsign.
+
+Example:
+
+```text
+AIC101
