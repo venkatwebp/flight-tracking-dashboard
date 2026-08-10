@@ -133,3 +133,30 @@ Example:
 
 ```text
 AIC101
+
+Add this:
+
+```markdown
+---
+
+# 🖼️ Screenshots
+
+## Dashboard – Light Theme
+
+![Dashboard Light Theme](screenshots/dashboard-overview-light.png)
+
+## Flight Operations – Light Theme
+
+![Flight Operations Light Theme](screenshots/flight-operations-light.png)
+
+## Dashboard – Dark Theme
+
+![Dashboard Dark Theme](screenshots/dashboard-overview-dark.png)
+
+## Selected Flight & Route
+
+![Selected Flight Route](screenshots/selected-flight-route.png)
+
+## Flight Animation
+
+![Flight Animation](screenshots/flight-animation.png)
