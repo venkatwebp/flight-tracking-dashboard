@@ -1,1 +1,55 @@
-<p>header works!</p>
+<header class="dashboard-header">
+
+  <div class="brand-section">
+
+    <div class="brand-icon">
+      ✈
+    </div>
+
+    <div class="brand-text">
+      <div class="brand-title">
+        Flight Operations
+      </div>
+
+      <div class="brand-subtitle">
+        Real-Time Flight Monitoring
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="header-status">
+
+    <div class="system-status">
+      <span class="status-dot"></span>
+
+      <div class="status-text">
+        <span class="status-label">System Status</span>
+        <span class="status-value">Operational</span>
+      </div>
+    </div>
+
+    <div class="header-divider"></div>
+
+    <div class="operations-text">
+      Aviation Operations
+    </div>
+
+    <button
+      type="button"
+      class="theme-toggle"
+      (click)="toggleTheme()"
+      [attr.aria-label]="isDarkMode ? 'Switch to light theme' : 'Switch to dark theme'">
+
+      <span class="theme-icon">
+        {{ isDarkMode ? '☀' : '🌙' }}
+      </span>
+
+      <span class="theme-label">
+        {{ isDarkMode ? 'Light' : 'Dark' }}
+      </span>
+    </button>
+  </div>
+
+</header>

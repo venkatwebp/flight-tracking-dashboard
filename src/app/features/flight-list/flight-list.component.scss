@@ -1,0 +1,569 @@
+.flight-list-container {
+  margin-top: 20px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  box-shadow:
+    0 3px 12px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+
+/* --------------------------------
+   Header
+-------------------------------- */
+
+.flight-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--card-bg);
+}
+
+
+.flight-list-header h2 {
+  margin: 0 0 4px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+
+.flight-list-header p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+
+.flight-count {
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+
+/* --------------------------------
+   Table wrapper
+-------------------------------- */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+
+/* --------------------------------
+   Table
+-------------------------------- */
+
+table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+}
+
+
+/* --------------------------------
+   Header
+-------------------------------- */
+
+thead {
+  background: var(--card-bg);
+  color: var(--text-secondary);
+}
+
+
+th {
+  padding: 13px 18px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+
+/* --------------------------------
+   Body
+-------------------------------- */
+  
+td {
+  padding: 14px 18px;
+  font-size: 13px;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  white-space: nowrap;
+}
+
+
+tbody tr {
+  position: relative;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+tbody tr:hover {
+  background: var(--hover-bg);
+}
+
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* --------------------------------
+   Selected row
+-------------------------------- */
+
+tbody tr.selected {
+  background: var(--selected-bg) !important;
+}
+
+
+tbody tr.selected td:first-child {
+  box-shadow:
+    inset 4px 0 0 var(--text-primary);
+}
+
+
+tbody tr.selected:hover {
+  background: var(--hover-bg) !important;
+}
+
+
+/* --------------------------------
+   Flight cell
+-------------------------------- */
+
+.flight-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.flight-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  font-size: 14px;
+}
+
+
+.flight-cell strong {
+  color: var(--text-primary);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* --------------------------------
+   Callsign
+-------------------------------- */
+
+.callsign-cell {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+
+/* --------------------------------
+   Airport
+-------------------------------- */
+
+.airport-cell {
+  display: flex;
+  align-items: center;
+}
+
+
+.airport-code {
+  font-weight: 650;
+  color: var(--text-primary);
+}
+
+
+/* --------------------------------
+   Aircraft
+-------------------------------- */
+
+.aircraft-cell {
+  color: var(--text-secondary);
+}
+
+
+/* --------------------------------
+   Status
+-------------------------------- */
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: currentColor;
+}
+
+
+/* Active */
+
+.status.active {
+  color: var(--status-active-text);
+  background: var(--status-active-bg);
+}
+
+
+/* Delayed */
+
+.status.delayed {
+  color: var(--status-delayed-text);
+  background: var(--status-delayed-bg);
+}
+
+
+/* Arrived */
+
+.status.arrived {
+  color: var(--status-arrived-text);
+  background: var(--status-arrived-bg);
+}
+
+
+/* --------------------------------
+   No Results
+-------------------------------- */
+
+.no-results {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+
+.no-results-icon {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  font-size: 25px;
+  margin-bottom: 14px;
+}
+
+
+.no-results h3 {
+  margin: 0 0 7px;
+  font-size: 17px;
+  font-weight: 650;
+  color: var(--text-primary);
+}
+
+
+.no-results p {
+  max-width: 300px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.sortable {
+  cursor: pointer;
+
+  user-select: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.sortable:hover {
+  background: var(--card-bg);
+  color: var(--text-primary);
+}
+
+
+.sortable > span:first-child {
+  margin-right: 6px;
+}
+
+
+.sort-icon {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 14px;
+
+  font-size: 12px;
+
+  color: var(--text-secondary);
+
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.sortable:hover .sort-icon {
+  color: var(--text-primary);
+}
+
+
+/* --------------------------------
+   Tablet
+-------------------------------- */
+
+/* --------------------------------
+   Pagination
+-------------------------------- */
+
+.pagination-bar {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 16px;
+
+  padding: 14px 20px;
+
+  border-top: 1px solid var(--border-color);
+
+  background: var(--card-bg);
+}
+
+
+/* Result count */
+
+.pagination-info {
+  font-size: 12px;
+
+  color: var(--text-secondary);
+
+  white-space: nowrap;
+}
+
+
+.pagination-info strong {
+  color: var(--text-primary);
+  font-weight: 650;
+}
+
+
+/* Page size */
+
+.page-size-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+
+.page-size-control label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+
+.page-size-control select {
+  height: 34px;
+  padding: 0 28px 0 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+
+.page-size-control select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow:
+    0 0 0 3px rgba(25, 118, 210, 0.08);
+}
+
+
+/* Pagination buttons */
+
+.pagination-controls {
+  display: flex;
+
+  align-items: center;
+
+  gap: 5px;
+}
+
+
+.page-button {
+  min-width: 32px;
+
+  height: 32px;
+
+  padding: 0 8px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-color);
+  border-radius: 7px;
+  background: var(--card-bg);
+  color: var(--text-secondary);
+  font-size: 12px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.page-button:hover:not(:disabled) {
+  background: var(--card-bg);
+
+  border-color: var(--border-color);
+
+  color: var(--text-primary);
+}
+
+
+.page-button.active {
+  background: var(--primary-color);
+
+  border-color: var(--primary-color);
+
+  color: var(--card-bg);
+}
+
+
+.page-button:disabled {
+  opacity: 0.4;
+
+  cursor: not-allowed;
+}
+
+
+/* --------------------------------
+   Responsive
+-------------------------------- */
+
+@media (max-width: 900px) {
+
+  .pagination-bar {
+    flex-wrap: wrap;
+  }
+
+  .pagination-info {
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .pagination-bar {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    padding: 14px 16px;
+  }
+
+  .page-size-control {
+    margin-left: 0;
+  }
+
+  .pagination-controls {
+    width: 100%;
+
+    justify-content: center;
+  }
+
+}
+
+
+@media (max-width: 768px) {
+
+  .flight-list-header {
+    padding: 16px;
+  }
+
+  th,
+  td {
+    padding: 12px 14px;
+  }
+
+}
+
+
+/* --------------------------------
+   Mobile
+-------------------------------- */
+
+@media (max-width: 480px) {
+
+  .flight-list-header {
+    align-items: flex-start;
+
+    gap: 10px;
+  }
+
+  .flight-list-header h2 {
+    font-size: 16px;
+  }
+
+  .flight-count {
+    font-size: 11px;
+  }
+
+}

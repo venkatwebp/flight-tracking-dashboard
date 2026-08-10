@@ -5,3 +5,126 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.placeholder{
+    height:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    color:#64748B;
+
+    min-height:200px;
+}
+
+.card{
+    height:110px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:12px;
+
+    background:white;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+    font-size:20px;
+
+    font-weight:600;
+
+}
+.dark-theme .leaflet-map-pane svg {
+  color: #0f172a;
+}
+
+/* LIGHT THEME */
+
+:root {
+  /* Main surfaces */
+  --page-bg: #f5f7fb;
+  --card-bg: #ffffff;
+  --surface-bg: #f8fafc;
+
+  /* Text */
+  --text-primary: #172033;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+
+  /* Borders */
+  --border-color: #e2e8f0;
+
+  /* Icons */
+  --filter-icon-bg: #e8f0fe;
+  --icon-color: #1565c0;
+
+  /* Status */
+  --status-active: #16a34a;
+  --status-delayed: #ea580c;
+  --status-arrived: #2563eb;
+
+  /* Route */
+  --route-track: #cbd5e1;
+  --route-plane: #e8f0fe;
+  --route-plane-text: #1565c0;
+
+  /* Empty state */
+  --empty-state-bg: #eef4fb;
+  --empty-state-color: #1565c0;
+
+  /* Hover */
+  --hover-bg: #f1f5f9;
+
+  /* Shadows */
+  --card-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
+}
+
+//DARK THEME
+.dark-theme {
+  /* Main surfaces */
+  --page-bg: #0f172a;
+  --card-bg: #1e293b;
+  --surface-bg: #263449;
+
+  /* Text */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  /* Borders */
+  --border-color: #334155;
+
+  /* Icons */
+  --filter-icon-bg: #263b5a;
+  --icon-color: #8ab4f8;
+
+  /* Status */
+  --status-active: #4ade80;
+  --status-delayed: #fb923c;
+  --status-arrived: #60a5fa;
+
+  /* Route */
+  --route-track: #475569;
+  --route-plane: #334155;
+  --route-plane-text: #8ab4f8;
+
+  /* Empty state */
+  --empty-state-bg: #263449;
+  --empty-state-color: #8ab4f8;
+
+  /* Hover */
+  --hover-bg: #263449;
+
+  /* Shadows */
+  --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}

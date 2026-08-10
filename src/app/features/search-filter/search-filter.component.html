@@ -1,1 +1,142 @@
-<p>search-filter works!</p>
+<div class="filter-card">
+
+  <div class="filter-header">
+    <div>
+      <div class="filter-title">
+        Flight Search & Filters
+      </div>
+      <div class="filter-subtitle">
+        Refine flights by callsign, status, origin or destination
+      </div>
+    </div>
+    <div class="filter-icon">
+      ⚙
+    </div>
+
+  </div>
+
+
+  <form
+    class="filter-form"
+    [formGroup]="filterForm">
+
+    <!-- Callsign -->
+
+    <div class="filter-group">
+      <label for="callsign">
+        Search Callsign
+      </label>
+
+      <div class="input-wrapper">
+        <span class="input-icon">
+          ⌕
+        </span>
+
+        <input
+          id="callsign"
+          type="text"
+          placeholder="e.g. AIC101"
+          formControlName="callsign">
+
+      </div>
+    </div>
+    <!-- Status -->
+
+    <div class="filter-group">
+      <label for="status">
+        Status
+      </label>
+
+      <div class="select-wrapper">
+        <select
+          id="status"
+          formControlName="status">
+
+          <option
+            *ngFor="let status of statuses"
+            [value]="status">
+
+            {{ status }}
+
+          </option>
+
+        </select>
+      </div>
+    </div>
+
+
+    <!-- Origin -->
+
+    <div class="filter-group">
+
+      <label for="origin">
+        Origin
+      </label>
+
+      <div class="select-wrapper">
+
+        <select
+          id="origin"
+          formControlName="origin">
+
+          <option
+            *ngFor="let origin of origins"
+            [value]="origin">
+
+            {{ origin }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <!-- Destination -->
+
+    <div class="filter-group">
+
+      <label for="destination">
+        Destination
+      </label>
+
+      <div class="select-wrapper">
+
+        <select
+          id="destination"
+          formControlName="destination">
+
+          <option
+            *ngFor="let destination of destinations"
+            [value]="destination">
+
+            {{ destination }}
+
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <!-- Clear -->
+
+    <div class="filter-actions">
+
+      <button
+        type="button"
+        class="clear-filters-btn"
+        (click)="clearFilters()">
+
+        <span class="clear-icon">↻</span>
+
+        Clear Filters
+
+      </button>
+    </div>
+  </form>
+</div>

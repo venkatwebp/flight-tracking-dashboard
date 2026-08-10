@@ -1,0 +1,173 @@
+.kpi-card {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  min-height: 132px;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow:
+    0 2px 8px rgba(15, 23, 42, 0.05);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* ---------------------------------
+   Accent bar
+---------------------------------- */
+
+.kpi-accent {
+  width: 5px;
+  flex-shrink: 0;
+  background: var(--card-color);
+}
+
+
+/* ---------------------------------
+   Content
+---------------------------------- */
+
+.kpi-content {
+  flex: 1;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+/* ---------------------------------
+   Top section
+---------------------------------- */
+
+.kpi-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+
+.kpi-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+/* ---------------------------------
+   Icon
+---------------------------------- */
+
+.kpi-icon {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: color-mix(
+    in srgb,
+    var(--card-color) 10%,
+    white
+  );
+
+  color: var(--card-color);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+/* ---------------------------------
+   Value
+---------------------------------- */
+
+.kpi-value {
+  font-size: 34px;
+  line-height: 1;
+  font-weight: 750;
+  color: var(--text-primary);
+  letter-spacing: -1px;
+}
+
+
+/* ---------------------------------
+   Bottom label
+---------------------------------- */
+
+.kpi-label {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #94a3b8;
+  letter-spacing: 0.2px;
+}
+
+
+/* ---------------------------------
+   Hover
+---------------------------------- */
+
+.kpi-card:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(
+    in srgb,
+    var(--card-color) 25%,
+    #e2e8f0
+  );
+
+  box-shadow:
+    0 10px 24px rgba(15, 23, 42, 0.10);
+}
+
+
+/* ---------------------------------
+   Responsive
+---------------------------------- */
+
+@media (max-width: 768px) {
+
+  .kpi-card {
+    min-height: 120px;
+  }
+
+  .kpi-content {
+    padding: 16px;
+  }
+
+  .kpi-value {
+    font-size: 30px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .kpi-card {
+    min-height: 110px;
+    border-radius: 12px;
+  }
+
+  .kpi-title {
+    font-size: 12px;
+  }
+
+  .kpi-value {
+    font-size: 28px;
+  }
+
+  .kpi-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+}

@@ -1,1 +1,29 @@
-<p>flight-map works!</p>
+<div class="map-wrapper">
+
+  <div class="playback-controls" *ngIf="selectedFlight">
+
+    <button type="button" class="play-btn" (click)="playFlight()"
+      [disabled]="isPlaying">
+      <span class="button-icon">▶</span>
+      <span>Play</span>
+    </button>
+
+    <button type="button" class="pause-btn" (click)="pauseFlight()"
+      [disabled]="!isPlaying">
+      <span class="button-icon">⏸</span>
+      <span>Pause</span>
+    </button>
+
+    <button
+      type="button"
+      class="reset-btn"
+      (click)="resetFlight()">
+      <span class="button-icon">↻</span>
+      <span>Reset</span>
+    </button>
+
+  </div>
+
+  <div #mapContainer class="map-container"></div>
+
+</div>

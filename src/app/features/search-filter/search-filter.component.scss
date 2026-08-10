@@ -1,0 +1,284 @@
+.filter-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 14px;
+  box-shadow:
+    0 3px 12px rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+
+/* --------------------------------
+   Header
+-------------------------------- */
+
+.filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--border-color);
+  background: var(--card-bg);
+}
+
+
+.filter-title {
+  font-size: 16px;
+  font-weight: 650;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.filter-subtitle {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.filter-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: var(--icon-bg);
+  color: var(--icon-color);
+  font-size: 17px;
+}
+
+
+/* --------------------------------
+   Form
+-------------------------------- */
+
+.filter-form {
+  display: grid;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  grid-template-columns:
+    1.3fr
+    1fr
+    1fr
+    1fr
+    auto;
+  gap: 16px;
+  align-items: end;
+  padding: 20px 22px;
+}
+
+
+/* --------------------------------
+   Filter group
+-------------------------------- */
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+
+.filter-group label {
+  margin-bottom: 7px;
+  font-size: 12px;
+  font-weight: 650;
+  color: var(--text-secondary);
+  letter-spacing: 0.2px;
+}
+
+
+/* --------------------------------
+   Input
+-------------------------------- */
+
+.input-wrapper {
+  position: relative;
+}
+
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--icon-color);
+  font-size: 18px;
+  pointer-events: none;
+}
+
+
+.filter-group input,
+.filter-group select {
+  width: 100%;
+  height: 42px;
+  box-sizing: border-box;
+  border: 1px solid  var(--border-color);
+  border-radius: 9px;
+  background: var(--input-bg);
+  color: var(--text-primary);
+  font-size: 13px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+
+.filter-group input {
+  padding: 0 12px 0 38px;
+}
+
+
+.filter-group select {
+  padding: 0 34px 0 12px;
+  cursor: pointer;
+  appearance: auto;
+}
+
+
+.filter-group input::placeholder {
+  color: var(--text-secondary);
+}
+
+
+/* --------------------------------
+   Focus
+-------------------------------- */
+
+.filter-group input:focus,
+.filter-group select:focus {
+  outline: none;
+  border-color: var(--focus-color);
+  background: var(--input-bg);
+  box-shadow:
+    0 0 0 3px rgba(25, 118, 210, 0.10);
+}
+
+
+.filter-group input:hover,
+.filter-group select:hover {
+  border-color: var(--focus-color);
+}
+
+
+/* --------------------------------
+   Clear button
+-------------------------------- */
+
+.filter-actions {
+  display: flex;
+  align-items: flex-end;
+}
+
+
+.clear-filters-btn {
+  height: 42px;
+
+  padding: 0 16px;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border: 1px solid var(--focus-color);
+
+  border-radius: 9px;
+
+  background: var(--input-bg);
+
+  color: var(--text-primary);
+
+  font-size: 13px;
+
+  font-weight: 600;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.clear-icon {
+  font-size: 17px;
+
+  line-height: 1;
+}
+
+
+.clear-filters-btn:hover {
+  background: var(--input-bg);
+
+  border-color: var(--focus-color);
+
+  color: var(--text-primary);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 3px 8px rgba(15, 23, 42, 0.08);
+}
+
+
+.clear-filters-btn:active {
+  transform: translateY(0);
+}
+
+
+/* --------------------------------
+   Tablet
+-------------------------------- */
+
+@media (max-width: 1100px) {
+
+  .filter-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filter-actions {
+    grid-column: 1 / -1;
+
+    justify-content: flex-end;
+  }
+
+}
+
+
+/* --------------------------------
+   Mobile
+-------------------------------- */
+
+@media (max-width: 600px) {
+
+  .filter-header {
+    padding: 16px;
+  }
+
+  .filter-form {
+    grid-template-columns: 1fr;
+
+    padding: 16px;
+  }
+
+  .filter-actions {
+    grid-column: auto;
+
+    justify-content: stretch;
+  }
+
+  .clear-filters-btn {
+    width: 100%;
+  }
+
+}

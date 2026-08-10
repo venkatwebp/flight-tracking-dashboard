@@ -1,1 +1,78 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+    <app-header></app-header>
+    <!-- Loading State -->
+    <div *ngIf="loading" class="loading-state">
+        <div class="spinner"></div>
+        <h3>Loading Flight Data...</h3>
+        <p>
+            Please wait while flight information is being loaded.
+        </p>
+    </div>
+    
+    <div *ngIf="!loading">
+    
+    
+        <!-- KPI Section -->
+        <section class="kpi-section">
+            <app-kpi-card
+                title="Total Flights"
+                [count]="dashboard.totalFlights"
+                cardColor="#1565c0">
+            </app-kpi-card>
+    
+            <app-kpi-card
+                title="Active Flights"
+                [count]="dashboard.activeFlights"
+                cardColor="#2e7d32">
+            </app-kpi-card>
+    
+            <app-kpi-card
+                title="Delayed Flights"
+                [count]="dashboard.delayedFlights"
+                cardColor="#ef6c00">
+            </app-kpi-card>
+    
+            <app-kpi-card
+                title="Arrived Flights"
+                [count]="dashboard.arrivedFlights"
+                cardColor="#6a1b9a">
+            </app-kpi-card>
+    
+            </section>
+    
+        <!-- Map + Details -->
+    
+        <section class="content-section">
+    
+            <div class="map-container">
+    
+                <app-flight-map></app-flight-map>
+    
+            </div>
+    
+            <div class="details-container">
+    
+                <app-flight-details></app-flight-details>
+    
+            </div>
+    
+        </section>
+    
+        <!-- Filters -->
+    
+        <section>
+    
+            <app-search-filter></app-search-filter>
+    
+        </section>
+    
+        <!-- Flight List -->
+    
+        <section>
+    
+            <app-flight-list></app-flight-list>
+    
+        </section>
+    
+    </div>
+</div>

@@ -1,1 +1,34 @@
-<p>kpi-card works!</p>
+<div
+  class="kpi-card"
+  [style.--card-color]="cardColor">
+
+  <div class="kpi-accent"></div>
+
+  <div class="kpi-content">
+
+    <div class="kpi-top">
+
+      <div class="kpi-title">
+        {{ title }}
+      </div>
+
+      <div class="kpi-icon">
+        <span *ngIf="title === 'Total Flights'">✈</span>
+        <span *ngIf="title === 'Active Flights'">●</span>
+        <span *ngIf="title === 'Delayed Flights'">!</span>
+        <span *ngIf="title === 'Arrived Flights'">✓</span>
+      </div>
+
+    </div>
+
+    <div class="kpi-value">
+      {{ count }}
+    </div>
+
+    <div class="kpi-label">
+      Current Operations
+    </div>
+
+  </div>
+
+</div>

@@ -13,6 +13,8 @@ import { FlightListComponent } from './features/flight-list/flight-list.componen
 import { SearchFilterComponent } from './features/search-filter/search-filter.component';
 import { KpiCardComponent } from './shared/components/kpi-card/kpi-card.component';
 import { StatusChipComponent } from './shared/components/status-chip/status-chip.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,15 @@ import { StatusChipComponent } from './shared/components/status-chip/status-chip
     FlightListComponent,
     SearchFilterComponent,
     KpiCardComponent,
-    StatusChipComponent
+    StatusChipComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

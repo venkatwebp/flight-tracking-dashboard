@@ -1,1 +1,281 @@
-<p>flight-list works!</p>
+<div class="flight-list-container">
+
+  <div class="flight-list-header">
+
+    <div>
+      <h2>Flight Operations</h2>
+
+      <p>
+        Available flights and current operational status
+      </p>
+    </div>
+
+    <div class="flight-count">
+      {{ flights.length }} Flights
+    </div>
+
+  </div>
+
+
+  <div class="table-wrapper">
+
+    <table>
+
+    <thead>
+
+    <tr>
+
+      <th
+        class="sortable"
+        (click)="sort('flightNumber')">
+
+        <span>
+          Flight
+        </span>
+
+        <span class="sort-icon">
+          {{ getSortIcon('flightNumber') }}
+        </span>
+
+      </th>
+
+
+      <th
+        class="sortable"
+        (click)="sort('callsign')">
+
+        <span>
+          Callsign
+        </span>
+
+        <span class="sort-icon">
+          {{ getSortIcon('callsign') }}
+        </span>
+
+      </th>
+
+
+      <th
+        class="sortable"
+        (click)="sort('origin')">
+
+        <span>
+          Origin
+        </span>
+
+        <span class="sort-icon">
+          {{ getSortIcon('origin') }}
+        </span>
+
+      </th>
+
+
+      <th
+        class="sortable"
+        (click)="sort('destination')">
+
+        <span>
+          Destination
+        </span>
+
+        <span class="sort-icon">
+          {{ getSortIcon('destination') }}
+        </span>
+
+      </th>
+
+
+      <th
+        class="sortable"
+        (click)="sort('aircraftType')">
+
+        <span>
+          Aircraft
+        </span>
+
+        <span class="sort-icon">
+          {{ getSortIcon('aircraftType') }}
+        </span>
+
+      </th>
+
+
+      <th
+        class="sortable"
+        (click)="sort('status')">
+
+        <span>
+          Status
+        </span>
+
+        <span class="sort-icon">
+          {{ getSortIcon('status') }}
+        </span>
+
+      </th>
+
+    </tr>
+
+  </thead>
+
+
+      <tbody>
+
+  <tr
+    *ngFor="let flight of paginatedFlights"
+    (click)="selectFlight(flight)"
+    [class.selected]="
+      selectedFlight?.flightNumber === flight.flightNumber
+    ">
+
+    <td>
+
+      <div class="flight-cell">
+
+        <div class="flight-icon">
+          ✈
+        </div>
+
+        <strong>
+          {{ flight.flightNumber }}
+        </strong>
+
+      </div>
+
+    </td>
+
+    <td class="callsign-cell">
+      {{ flight.callsign }}
+    </td>
+
+    <td>
+
+      <div class="airport-cell">
+        <span class="airport-code">
+          {{ flight.origin }}
+        </span>
+      </div>
+
+    </td>
+
+    <td>
+
+      <div class="airport-cell">
+        <span class="airport-code">
+          {{ flight.destination }}
+        </span>
+      </div>
+
+    </td>
+
+    <td class="aircraft-cell">
+      {{ flight.aircraftType }}
+    </td>
+
+    <td>
+
+      <span
+        class="status"
+        [ngClass]="flight.status.toLowerCase()">
+
+        <span class="status-dot"></span>
+
+        {{ flight.status }}
+
+      </span>
+
+    </td>
+
+  </tr>
+
+</tbody>
+
+    </table>
+
+    <div class="pagination-bar">
+
+  <!-- Result information -->
+
+  <div class="pagination-info">
+
+    Showing
+    <strong>{{ startItem }}</strong>
+    -
+    <strong>{{ endItem }}</strong>
+    of
+    <strong>{{ flights.length }}</strong>
+    flights
+
+  </div>
+
+
+  <!-- Page size -->
+
+  <div class="page-size-control">
+
+    <label for="pageSize">
+      Rows per page
+    </label>
+
+    <select
+      id="pageSize"
+      [(ngModel)]="pageSize"
+      (change)="changePageSize()">
+
+      <option
+        *ngFor="let size of pageSizeOptions"
+        [value]="size">
+
+        {{ size }}
+
+      </option>
+
+    </select>
+
+  </div>
+
+
+  <!-- Pagination -->
+
+  <div class="pagination-controls">
+
+    <button
+      type="button"
+      class="page-button"
+      [disabled]="currentPage === 1"
+      (click)="previousPage()">
+
+      ‹
+
+    </button>
+
+
+    <button
+      type="button"
+      *ngFor="let page of pageNumbers"
+      class="page-button"
+      [class.active]="currentPage === page"
+      (click)="goToPage(page)">
+
+      {{ page }}
+
+    </button>
+
+
+    <button
+      type="button"
+      class="page-button"
+      [disabled]="currentPage === totalPages"
+      (click)="nextPage()">
+
+      ›
+
+    </button>
+
+  </div>
+
+</div>
+
+  </div>
+
+</div>

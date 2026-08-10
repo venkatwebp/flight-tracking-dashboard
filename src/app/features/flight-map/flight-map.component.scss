@@ -1,0 +1,173 @@
+.map-container {
+  width: 100%;
+  height: 550px;
+  border-radius: 12px;
+}
+.aircraft-marker {
+
+  width: 30px;
+  height: 30px;
+
+  background: #1976d2;
+  color: white;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 16px;
+
+  box-shadow: 0 2px 8px rgba(0,0,0,.35);
+
+  border: 2px solid white;
+}
+
+.aircraft-icon-wrapper {
+  background: transparent !important;
+  border: none !important;
+}
+
+.aircraft-marker {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+  border: 2px solid #1565c0;
+  border-radius: 50%;
+
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+
+  color: #1565c0;
+}
+
+.aircraft-svg {
+  width: 24px;
+  height: 24px;
+
+  display: block;
+
+  transform-origin: center center;
+}
+
+/* =================================
+   Flight Playback Controls
+================================= */
+
+.playback-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 14px 16px;
+
+  background: var(--card-bg);
+  border-top: 1px solid var(--border-color);
+}
+
+/* Common button */
+
+.playback-controls button {
+  min-width: 92px;
+  height: 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 0 14px;
+
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+/* Icon */
+
+.playback-controls button span {
+  font-size: 13px;
+}
+
+/* Hover */
+
+.playback-controls button:not(:disabled):hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+/* Active */
+
+.playback-controls button:not(:disabled):active {
+  transform: translateY(0);
+}
+
+/* =================================
+   Play
+================================= */
+
+.play-btn:not(:disabled) {
+  background: #1565c0;
+  border-color: #1565c0;
+  color: #fff;
+}
+
+.play-btn:not(:disabled):hover {
+  background: #0d47a1;
+  border-color: #0d47a1;
+}
+
+/* =================================
+   Pause
+================================= */
+
+.pause-btn:not(:disabled) {
+  background: #fff7ed;
+  border-color: #fed7aa;
+  color: #c2410c;
+}
+
+.pause-btn:not(:disabled):hover {
+  background: #ffedd5;
+}
+
+/* =================================
+   Reset
+================================= */
+
+.reset-btn {
+  background: var(--card-bg);
+  color: var(--text-primary);
+}
+
+.reset-btn:not(:disabled):hover {
+  background: var(--filter-icon-bg);
+}
+
+/* =================================
+   Disabled
+================================= */
+
+.playback-controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}

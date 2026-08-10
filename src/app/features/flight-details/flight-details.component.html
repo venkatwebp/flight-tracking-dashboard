@@ -1,1 +1,197 @@
-<p>flight-details works!</p>
+<div class="flight-details">
+
+  <div class="details-header">
+
+    <div>
+      <h2>Flight Details</h2>
+
+      <p *ngIf="selectedFlight">
+        Live flight information
+      </p>
+
+      <p *ngIf="!selectedFlight">
+        Select a flight to view information
+      </p>
+    </div>
+
+    <div
+      class="flight-header-icon"
+      *ngIf="selectedFlight">
+      ✈
+    </div>
+
+  </div>
+
+
+  <ng-container *ngIf="selectedFlight; else noFlight">
+
+    <!-- Flight Identity -->
+
+    <div class="flight-identity">
+
+      <div class="flight-number">
+        {{ selectedFlight.flightNumber }}
+      </div>
+
+      <div class="callsign">
+        {{ selectedFlight.callsign }}
+      </div>
+
+    </div>
+
+
+    <!-- Status -->
+
+    <div class="status-card">
+
+      <span class="status-indicator"></span>
+
+      <div class="status-content">
+
+        <span class="status-label">
+          Current Status
+        </span>
+
+        <strong
+          [ngClass]="{
+            'status-active': selectedFlight.status === 'Active',
+            'status-delayed': selectedFlight.status === 'Delayed',
+            'status-arrived': selectedFlight.status === 'Arrived'
+          }">
+
+          {{ selectedFlight.status }}
+
+        </strong>
+
+      </div>
+
+    </div>
+
+
+    <!-- Route -->
+
+    <div class="route-section">
+
+      <div class="section-title">
+        Route
+      </div>
+
+      <div class="route-display">
+
+        <div class="airport">
+
+          <span class="airport-code">
+            {{ selectedFlight.origin }}
+          </span>
+
+          <span class="airport-label">
+            Origin
+          </span>
+
+        </div>
+
+
+        <div class="route-line">
+
+          <span class="route-dot"></span>
+
+          <span class="route-track"></span>
+
+          <span class="route-plane">
+            ✈
+          </span>
+
+          <span class="route-track"></span>
+
+          <span class="route-dot destination-dot"></span>
+
+        </div>
+
+
+        <div class="airport destination">
+
+          <span class="airport-code">
+            {{ selectedFlight.destination }}
+          </span>
+
+          <span class="airport-label">
+            Destination
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Flight Information -->
+
+    <div class="information-section">
+
+      <div class="section-title">
+        Flight Information
+      </div>
+
+
+      <div class="detail-row">
+
+        <span>Aircraft</span>
+
+        <strong>
+          {{ selectedFlight.aircraftType }}
+        </strong>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span>Departure</span>
+
+        <strong>
+          {{ selectedFlight.estimatedDeparture }}
+        </strong>
+
+      </div>
+
+
+      <div class="detail-row">
+
+        <span>Arrival</span>
+
+        <strong>
+          {{ selectedFlight.estimatedArrival }}
+        </strong>
+
+      </div>
+
+    </div>
+
+  </ng-container>
+
+
+  <!-- Empty State -->
+
+  <ng-template #noFlight>
+
+    <div class="empty-state">
+
+      <div class="empty-icon">
+        ✈
+      </div>
+
+      <h3>
+        Select a Flight
+      </h3>
+
+      <p>
+        Click any aircraft marker on the map
+        to view flight information.
+      </p>
+
+    </div>
+
+  </ng-template>
+
+</div>
